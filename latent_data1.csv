@@ -1,0 +1,10 @@
+c1cc(ccc1C(F)(F)F)S(=O)(=O)N2CCN(C[C@@H]2C(=O)NCc3ccc(c(c3)F)OC(F)(F)F)c4nc5c(s4)cnc(n5)C6CC6
+C1N(c2nc3nc(C4CC4)ncc3s2)C[C@H](C(NCc2ccc(OC(F)(F)F)c(F)c2)=O)N(S(=O)(c2ccc(C(F)(F)F)cc2)=O)C1
+O=S(c1ccc(C(F)(F)F)cc1)(=O)N1[C@@H](C(NCc2cc(F)c(OC(F)(F)F)cc2)=O)CN(c2nc3c(cnc(C4CC4)n3)s2)CC1
+C1CN(c2nc3nc(C4CC4)ncc3s2)C[C@H](C(=O)NCc2ccc(OC(F)(F)F)c(F)c2)N1S(c1ccc(C(F)(F)F)cc1)(=O)=O
+C1[C@H](C(=O)NCc2ccc(OC(F)(F)F)c(F)c2)N(S(c2ccc(C(F)(F)F)cc2)(=O)=O)CCN1c1sc2c(nc(C3CC3)nc2)n1
+C1CN(S(c2ccc(C(F)(F)F)cc2)(=O)=O)[C@@H](C(NCc2ccc(OC(F)(F)F)c(F)c2)=O)CN1c1nc2nc(C3CC3)ncc2s1
+O(c1ccc(CNC([C@H]2CN(c3sc4cnc(C5CC5)nc4n3)CCN2S(=O)(c2ccc(C(F)(F)F)cc2)=O)=O)cc1F)C(F)(F)F
+s1c(N2CCN(S(=O)(=O)c3ccc(C(F)(F)F)cc3)[C@@H](C(NCc3ccc(OC(F)(F)F)c(F)c3)=O)C2)nc2c1cnc(C1CC1)n2
+C(F)(F)(Oc1ccc(CNC([C@@H]2N(S(=O)(c3ccc(C(F)(F)F)cc3)=O)CCN(c3nc4nc(C5CC5)ncc4s3)C2)=O)cc1F)F
+c1(OC(F)(F)F)ccc(CNC([C@@H]2N(S(=O)(=O)c3ccc(C(F)(F)F)cc3)CCN(c3nc4nc(C5CC5)ncc4s3)C2)=O)cc1F

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Formulaire de la nouvelle molécule
+    </title>
+</head>
+
+<body>
+{% load static %}
+<h1> veuillez remplir le formulaire </h1>
+<p></p>
+<form method="POST" enctype="multipart/form-data" action="{% url 'Mol' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+<fieldset style="float: left; width: 280px; background-color:#ede7e7;" >
+
+        <p>ChEMBL ID: <input type="text" name="Chemblid" id="Chemblid"></p>
+        <p>Max Phase:</p>
+        <select name="MaxPhase">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+        <p>Molecular Weight: <input type="number" min="100" max="600" name="MolecularWeight" id="MolecularWeight"></p>
+        <p>Bioactivities: <input type="number" min="1" max="7558" name="Bioactivities" id="Bioactivities"></p>
+        <p>Targets: <input type="number" min="1" max="1018" name="Targets" id="Targets"></p>
+        <p>AlogP: <input type="number" name="AlogP" id="AlogP"></p>
+        <p>Polar Surface Area: <input type="number" min="100" max="300" name="PolarSurfaceArea" id="PolarSurfaceArea"></p>
+        <p>HBA: <input type="number" min="1" max="32" name="HBA" id="HBA"></p>
+        <p>HBD: <input type="number" min="0" max="20" name="HBD" id="HBD"></p>
+        <p>#RO5 Violations: </p>
+          <select name="RO5Violations" id="RO5Violations">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+
+        <p>#Rotatable Bonds: <input type="number" min="0" max="59" name="RotatableBonds" id="RotatableBonds"></p>
+        <p>QED Weighted: <input type="number" min="0.01" max="0.95" name="QEDWeighted" id="QEDWeighted"></p>
+        <p>CX Acidic pKa: <input type="number" min="0" max="14" name="CXAcidicpKa" id="CXAcidicpKa"></p>
+        <p>CX Basic pKa: <input type="number" min="0" max="23" name="CXBasicpKa" id="CXBasicpKa"></p>
+        <p>CX LogP: <input type="number" min="-12" max="12" name="CXLogP" id="CXLogP"></p>
+
+        <p>CX LogD: <input type="number" min="-30" max="30"name="CXLogD" id="CXLogD"></p>
+        <p>Aromatic Rings: <input type="number"  min="0" max="24" name="AromaticRings" id="AromaticRings"></p>
+        <p>Inorganic Flag: </p>
+             <select name="InorganicFlag" id="InorganicFlag">
+                 <option value="-1">-1</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+
+          </select>
+        <p>Heavy Atoms: <input type="number" min="1" max="79" name="HeavyAtoms" id="HeavyAtoms"></p>
+        <p>HBA (Lipinski): <input type="number"  min="0" max="35" name="HBA_Lipinski" id="HBA_Lipinski"></p>
+        <p>HBD (Lipinski): <input type="number" min="0" max="27" name="HBD_Lipinski"  id="HBD_Lipinski"></p>
+        <p>#RO5 Violations (Lipinski): </p>
+               <select name="RO5Violations_Lipinski" id="RO5Violations_Lipinski">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+        <p>Molecular Weight (Monoisotopic): <input type="number" min="100" max="1000" name="MolecularWeight_Monoisotopic" id="MolecularWeight_Monoisotopic"></p>
+        <p>Smiles: <input type="text" name="Smiles" id="Smiles"></p>
+        <p> <input type="submit" value="Envoyer" action="{% url 'Mol' %}"></a> <input type="reset" value="Tout enlever"></p>
+
+
+
+</fieldset>
+</form>
+        <form method="GET" action="{% url 'search_results' %}">
+    <input type="text" name="search_query" placeholder="Rechercher...">
+    <button type="submit">Rechercher</button></form>
+<!--
+<form action="Molecule.html" enctype="multipart/form-data" method="post"> {%csrf_token%}
+    {{ form.as_p }}
+</form>
+-->
+
+</body>
+<style>
+    body {
+
+        background-image: url('https://www.fujitsu.com/global/imagesgig5/Accelerating-Drug-Discovery-banner-800x450_tcm100-7193874_tcm100-6286607-32.jpg');
+        /* Remplacez "chembl_image.jpg" par le chemin de votre image */
+        background-size: cover;
+        /* Ajuste la taille de l'image pour couvrir tout le fond */
+        background-repeat: no-repeat;
+        /* Empêche la répétition de l'image en arrière-plan */
+        background-position: center center;
+        /* Centre l'image horizontalement et verticalement */
+        background-color: rgb(221, 218, 221);
+        /* Couleur de fond de secours si l'image ne se charge pas */
+    }
+
+    .container {
+        background-color: rgb(19, 89, 139);
+    }
+
+    h1 {
+        font-size: 48px;
+        color: rgb(225, 224, 228);
+
+    }
+
+    u {
+        font-size: 18px;
+        color: rgb(212, 0, 255);
+    }
+
+    fieldset {
+        background-color: rgb(218, 200, 200);
+        border-block-start-style: groove;
+        border-width: 5px;
+    }
+
+
+
+</style>
+
+</html>

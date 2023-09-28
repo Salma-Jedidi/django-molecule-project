@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Résultats de la recherche</title>
+</head>
+<body>
+{% load static %}
+<h1>Résultats de la recherche :</h1>
+
+{% if results %}
+<ul>
+    {% for item in results %}
+
+    <ul>
+        <li>Chemblid: {{ item.Chemblid }}</li>
+        <li>MolecularWeight: {{ item.MolecularWeight }}</li>
+        <li>AlogP: {{ item.AlogP }}</li>
+        <li>HBD_Lipinski: {{ item.HBD_Lipinski }}</li>
+        <li>HBA_Lipinski: {{ item.HBA_Lipinski }}</li>
+        <li>RotatableBonds: {{ item.RotatableBonds }}</li>
+    </ul>
+        <button onclick="checkBioactivity({{ item.AlogP }}, {{ item.MolecularWeight }}, {{ item.HBD_Lipinski }}, {{ item.HBA_Lipinski }}, {{ item.RotatableBonds }})">
+        Check the bioavaibility
+    </button>
+
+    <script>
+    function checkBioactivity(alogP, molecularWeight, hbd, hba, rotatableBonds) {
+
+        if (alogP < 5 && molecularWeight < 500 && hbd < 5 && hba < 10 && rotatableBonds < 10) {
+            alert("The molecule is bioavaible !");
+        } else {
+            alert("The molecule is not bioavaible.");
+        }
+    }
+    </script>
+    {% endfor %}
+</ul>
+
+
+<a href="{% url 'Mol' %}" ><input type="button" value="Return"></a>
+{% else %}
+<p>Aucun résultat trouvé.</p>
+{% endif %}
+<p>
+<p></p>
+
+<!--     <script>
+   <script>
+            if ({{ item.AlogP}} < 5 && {{ item.MolecularWeight}} < 500 && {{ item.HBD_Lipinski}} < 5 && {{ item.HBA_Lipinski}} < 10  && {{ item.RotatableBonds}}<10)
+             {
+                alert("La molécule est bioactive !");
+            else {
+                alert("La molécule n'est pas bioactive.");
+            }
+    </script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var results = {{ results|safe }};
+        for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            if (item.AlogP < 5 && item.MolecularWeight < 500 && item.HBD_Lipinski < 5 && item.HBA_Lipinski< 10 &&  item.RotatableBonds< 10) {
+                alert("La molécule est bioactive !");
+            }
+            else {
+                alert("La molécule n'est pas bioactive.");
+            }
+        }
+    });
+
+    </script>-->
+
+<style>
+    body {
+
+        background-image: url('https://www.fujitsu.com/global/imagesgig5/Accelerating-Drug-Discovery-banner-800x450_tcm100-7193874_tcm100-6286607-32.jpg');
+        /* Remplacez "chembl_image.jpg" par le chemin de votre image */
+        background-size: cover;
+        /* Ajuste la taille de l'image pour couvrir tout le fond */
+        background-repeat: no-repeat;
+        /* Empêche la répétition de l'image en arrière-plan */
+        background-position: center center;
+        /* Centre l'image horizontalement et verticalement */
+        background-color: rgb(221, 218, 221);
+        /* Couleur de fond de secours si l'image ne se charge pas */
+    }
+
+    .container {
+        background-color: rgb(19, 89, 139);
+    }
+
+    h1 {
+        font-size: 48px;
+        color: rgb(225, 224, 228);
+
+    }
+
+    u {
+        font-size: 18px;
+        color: rgb(212, 0, 255);
+    }
+
+    fieldset {
+        background-color: rgb(218, 200, 200);
+        border-block-start-style: groove;
+        border-width: 5px;
+    }
+
+/*La barre de navigation doit avoir une bordure en bas 1px solid rgba(255, 255, 255, .3).*/
+nav{
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, .3);
+}
+/*Lors du survole sur la barre de menu l’arrière-plan doit avoir cette couleur rgba(255,255, 255, .3).*/
+nav a:hover {
+    background-color: rgba(255, 255, 255, .3);
+}
+/*La partie Header doit respecter l’affichage de la figure ci-dessous :*/
+nav a{
+    padding: .5em;
+    color: white;
+    text-decoration: none;
+}
+header {
+    font-family: "Metal Mania";
+    font-weight: normal;
+    background-color: #EB5757;
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
+/*******************************Mes achats*******************************/
+
+.sidenav {
+    width: 30%; /*Une largeur 30% par rapport à toute la page.*/
+    position: fixed; /*Le tableau mes achats doit avoir Une position fixe*/
+    margin-bottom: 35px; /*Une marge en bas de 35px*/
+	padding-top:10px; /*Un espacement supérieur de 10px et celui de la droite, gauche et bas de 0px.*/
+	padding-left:0;
+	padding-right:0;
+	padding-bottom:0;
+	margin-left: 65%;
+}
+
+
+</style>
+
+</body>
+</html>
